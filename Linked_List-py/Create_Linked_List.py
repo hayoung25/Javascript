@@ -20,7 +20,7 @@ class LinkedList:
   
   def get_head_node(self):
     return self.head_node
-  
+        
   #inserting new Node method
   def insert_beginning(self, new_value):
     new_node = Node(new_value)
