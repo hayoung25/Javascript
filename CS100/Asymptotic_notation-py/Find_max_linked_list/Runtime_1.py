@@ -1,4 +1,4 @@
-from Linked_List import LinkedList
+from Linked_list import LinkedList
 
 def find_max(linked_list):
     print("--------------------------")
