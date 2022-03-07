@@ -1,40 +1,49 @@
-"""You are given n activities with their start and finish times.
-Select the maximum number of activities that can be performed by a single person, 
-assuming that a person can only work on a single activity at a time.
+"""Find maximum number of events. (Each events has start, finish time, start and all events should not overlap. """
+start  =  [1, 0, 3, 5, 8, 5]
+finish =  [2, 6, 4, 7, 9, 9]
 
-Example 1 : Consider the following 3 activities sorted by
-by finish time.
-     start[]  =  {10, 12, 20};
-     finish[] =  {20, 25, 30};
-A person can perform at most two activities. The
-maximum set of activities that can be executed
-is {0, 2} [ These are indexes in start[] and
-finish[] ]""" 
+def make_event_array(start, finish):
+     start_finish = []
+     for i in range(len(finish)):
+          #make dictionary with 2 keys
+          new_dic = {"start": int, "finish": int}
 
-# Creating start finish array 
-start = [10, 12, 20]
-finish = [20, 25, 30]
+          #push in values into dictionary
+          new_dic["start"] = start[i]
+          new_dic["finish"] = finish[i]
 
-# Create event array which contains start time and finish time
-events = []
+          #push each dictionary into an array
+          start_finish.append(new_dic)
 
+     return start_finish
 
-for time in start:
-     event = []
-     event.append(time)
+## Max events
+def get_max_events(array):
+     n = len(array)
+     i = 0
+     j = 1 
+     max_event = []
+     max_event.append(array[0])     
+     while (j < n):
+          if array[i]["finish"] <= array[j]["start"]:
+               max_event.append(array[j])
+               i = j
+          j += 1
+     return max_event
 
-for time in finish:
-     event.append(time)
+## Making event array
+start_finish = make_event_array(start, finish)
 
-print(event)
+## sorting from low to high according to finish
+def get_finish(event):
+     return event.get("finish")
 
+start_finish.sort(key=get_finish)
 
-#   length = len(input_array)
-#   doubled_array = [0] * length
-#   for i in range(length):
-#     doubled_array[i] = input_array[i] * 2
-#   return doubled_array
+## get max_array with the events which are not overlapping
 
+max_events = get_max_events(start_finish)      
 
-
-
+## Answer
+answer = len(max_events)
+print(answer)
