@@ -14,8 +14,9 @@
         async function getData() {
             const response = await fetch('test.csv');
             const data = await response.text();
-
+            console.log(data)
             const table = data.split('\n').slice(1);
+            console.log(table)
             table.forEach(row => {
                 const columns = row.split(',');
                 const year = columns[0];
