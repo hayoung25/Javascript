@@ -1,4 +1,5 @@
 --CREATE TRIGGER
+
 -- Creating a trigger with trigger name'insert_trigger'
 CREATE TRIGGER insert_trigger 
 -- Trigger is attached to 'customers' table and it will be activated before anything will be inserted into the 'customers' table
