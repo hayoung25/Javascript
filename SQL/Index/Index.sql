@@ -6,7 +6,7 @@ FROM pg_Indexes
 WHERE tablename = 'customers'; -- statement for checking index 
 
 
--- MULTICOLUMN INDEX
+-- MULTI-COLUMN INDEX
 CREATE INDEX customers_last_name_first_name_idx ON customers (last_name, first_name);
 --creating multicolum index
 
