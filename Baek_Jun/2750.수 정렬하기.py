@@ -21,12 +21,18 @@
 # 4
 # 5
 
-x = int(input())
+import sys
+ 
+num = int(sys.stdin.readline())
+ 
 num_list = []
-
-for i in range(x):
-    num_list.append(int(input()))
-    
-num_list1 = sorted(num_list)
-for i in range(len(num_list)):
-    print(num_list1[i])
+ 
+for i in range(num):
+    a = int(sys.stdin.readline())
+    num_list.append(a)
+ 
+num_list.sort()
+ 
+for i in num_list:
+    print(i)
+ 
