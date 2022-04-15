@@ -1,6 +1,6 @@
 # Python3 code to demonstrate the
 # working of set() on list and tuple
-# Returns : An empty set if no element is passed. "@Non-repeating" element iterable modified as passed as argument. 
+# Returns(in dictionary form) : An empty set if no element is passed. "@Non-repeating" element iterable modified as passed as argument. 
  
 # initializing list
 lis1 = [ 3, 4, 1, 4, 5 ]
